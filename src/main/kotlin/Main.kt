@@ -1,4 +1,5 @@
 import java.util.Stack
+import kotlin.random.Random
 
 fun main() {
     val variable1: Int = 0 // immutable -> tidak bisa diubah
@@ -22,7 +23,6 @@ fun main() {
     val variable11: Double // desimal (64 bits, 15-16 max decimal digits)
     val variable12: Short // bilangan integer tapi lebih kecil (16 bits, -32768 - 32767)
     val charSequence: CharSequence = variable7
-
 
     val notelp = 800L
     println("==========")
@@ -185,8 +185,8 @@ string"""
     println("==========")
     println("Menu: \n1. Menu 1\n2. Menu 2\n3. Menu 3\n4. exit")
     print("silahkan masukkan pilihan: ")
-    val input = readLine()?.toIntOrNull()
-    when (input) {
+    // val input = readLine()?.toIntOrNull()
+    when (2) {
         1 -> println("Ini adalah menu 1")
         2 -> println("ini adalah menu 2")
         3 -> println("ini adalah menu 3")
@@ -194,4 +194,94 @@ string"""
         5 -> throw UnsupportedOperationException("pilihan tidak ada")
         else -> println("input anda salah")
     }
+
+    println("==========")
+    val arrayOfName = arrayOf("a", "b", "c", "d", "e")
+    arrayOfName.forEach { name ->
+        print(name)
+    }
+    println()
+
+    for (number in 0..10) {
+        print(number)
+    }
+    println()
+
+    for (number in 0..100 step 10) {
+        print(number)
+    }
+    println()
+
+    for (name in arrayOfName) {
+        print(name)
+    }
+    println()
+
+    println("==========")
+    while (false) {
+        println(Random(100).nextInt().toString())
+    }
+
+    var index = 0
+    val comparison = index < arrayOfName.size
+    while (comparison) {
+        print(arrayOfName.get(index))
+        index = index + 1
+    }
+    println()
+
+    index = 0
+    while (index < arrayOfName.size) {
+        print(arrayOfName.get(index))
+        index += 1
+    }
+    println()
+
+    index = 0
+    while (index < arrayOfName.size) {
+        print(arrayOfName.get(index))
+        index++
+    }
+    println()
+
+    var input: Int = 0 // non-nullable
+    while (false) {
+        println("==========")
+        println("Menu: \n1. Print Segitiga\n2. Print Segitiga Terbalik\n3. Print Diamond\n4. Print X\n5. Print Segitiga Outline\n6. Exit")
+        print("silahkan masukkan pilihan: ")
+        input = readLine()?.toIntOrNull() ?: 0
+        when (input) {
+            1 -> println("Ini adalah Segitiga")
+            2 -> println("ini adalah Segitiga Terbalik")
+            3 -> println("ini adalah Diamond")
+            4 -> println("ini adalah X")
+            5 -> println("ini adalah Segitiga Outline")
+            6 -> println("terimakasih!")
+            -1 -> throw UnsupportedOperationException("Selamat kamu kena error!")
+            else -> println("input anda salah")
+        }
+    }
+
+    println("==========")
+    do {
+        println("ini do while")
+    } while (false)
+
+    while (false) {
+        println("ini while do")
+    }
+
+    println("==========")
+    while(true) {
+        val randomNumber = (0..100).random()
+
+        if (randomNumber % 10 == 0) {
+            break
+        } else if (randomNumber % 3 == 0) {
+            continue
+        }
+
+        println("randomNumber: $randomNumber")
+    }
+    println("test")
 }
