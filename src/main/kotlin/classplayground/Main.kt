@@ -13,7 +13,7 @@ fun main() {
 //    notElectricCarJava.transformable = true
 //    println(notElectricCarJava.makeSound())
 
-    val notElectricCar = Car(3)
+    val notElectricCar = Car(wheel = 3)
     println("==========")
     println(notElectricCar.checkWheels())
 

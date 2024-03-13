@@ -2,6 +2,11 @@ import java.util.Stack
 import kotlin.random.Random
 
 fun main() {
+    val greenColor = "\u001b[31m"
+    val reset = "\u001b[0m" // to reset color to the default
+    val name = greenColor + "Alex" + reset // Add green only to Alex
+    println("name: $name")
+
     val variable1: Int = 0 // immutable -> tidak bisa diubah
     var variable2: String = "" // mutable -> bisa diubah
 
@@ -225,7 +230,7 @@ string"""
     var index = 0
     val comparison = index < arrayOfName.size
     while (comparison) {
-        print(arrayOfName.get(index))
+        //print(arrayOfName.get(index))
         index = index + 1
     }
     println()
